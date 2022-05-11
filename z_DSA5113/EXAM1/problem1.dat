@@ -1,0 +1,18 @@
+set PRODUCT := SEMI HIGH;				#Products in question
+set INGREDIENT := A B C;				#Available Ingredients
+
+param recipe:	A		B		C:=
+	SEMI		5		7		2
+	HIGH		3		2		4
+;
+	
+param		supply:=
+	A		5000
+	B		7000
+	C		8000
+;
+
+param: 		demand	profit:=
+	SEMI	150		50
+	HIGH	200		20
+;

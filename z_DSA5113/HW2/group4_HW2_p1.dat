@@ -1,0 +1,11 @@
+set PROD := Raisins Juice Jelly;
+set GRADE := A B;
+
+param:			min_avg		demand		rate	sales_price		production_cost:=
+	Raisins		8			INFINITY	6.5		8.29			5.07
+	Juice		6			190000		14		16.2			9.82
+	Jelly		0			210000		18		13.89			6.5;
+	
+param:	supply		rating		fruit_cost:=
+	A	930000		9			.45
+	B	5270000		5			.25;

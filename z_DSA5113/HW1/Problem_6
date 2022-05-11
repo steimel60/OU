@@ -1,0 +1,23 @@
+reset;
+
+var a >= 0;	#Municipal Bond
+var d >=0;	#Gov Bond
+var loan >= 0;	#Amount Borrowed
+
+maximize earnings: .043*a + .022*d - .0219*loan; #After tax interest maid
+subject to total: a+d <= 10 + loan;				 #Money available
+subject to Lender: loan <= 1;					 #Max loan
+subject to GovAgency: d >= 4;					 #Min amount in gov
+subject to MuniMax: a <= 3;						 #Max in municipal bonds
+subject to quality: .6*a -.4*d <= 0;			 #Avg quality constraint
+subject to maturity: 4*a - 2*d <= 0;			 #Avg maturity constraint
+
+solve;
+
+display a;
+display d;
+display loan;
+display earnings;
+
+
+

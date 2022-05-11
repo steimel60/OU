@@ -1,0 +1,6 @@
+set LOT_TYPE := HOUSE DUPLEX PARK;		#Possible lots to build
+
+param:		acres	cost	profit	min_percent:=
+	HOUSE	.18		110000	1500	.1
+	DUPLEX	.28		170000	2800	.25
+	PARK	2		25000	800		.1

@@ -1,0 +1,48 @@
+set NODES :=   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17; 
+set ARCS :=  (1, 2) (2,3) (2,7) (3,4) (3,11) (4,5) (4,14) (5,6) (5,16) (6,17) (7,8) (7,11) (8,9) (8,14) (9,10) (9,16) (10,17) (11,12) (11,14) (12,13) (12,16) (13,17) (14,15) (14,16) (15,17) (16,17);
+param b :=
+1 1			#Start (Year 0)
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+8 0
+9 0
+10 0
+11 0
+12 0
+13 0
+14 0
+15 0
+16 0
+17 -1;		#Finish (Year 5)
+param:        	c		l 	u :=
+		[1,2] 	800		0	1		#Keep Grill age 0, Year 0-1
+        [2,3] 	1250 	0 	1		#Keep Grill age 1, Year 1-2
+        [2,7] 	3400  	0	1		#Sell Grill age 1, Year 1-2
+        [3,4] 	2000  	0	1		#Keep Grill age 2, Year 2-3
+        [3,11] 	4300 	0	1		#Sell Grill age 2, Year 2-3
+        [4,5] 	2900 	0	1		#Keep Grill age 3, Year 3-4
+        [4,14] 	6900	0	1		#Sell Grill age 3, Year 3-4
+        [5,6] 	4800	0	1		#Keep Grill age 4, Year 4-5
+        [5,16] 	7450 	0	1		#Sell Grill age 4, Year 4-5
+        [6,17] 	0		0	1		#End problem, Grill age 5
+        [7,8] 	1250 	0	1		#Keep Grill age 1, Year 2-3
+        [7,11] 	3400 	0	1		#Sell Grill age 1, Year 2-3
+        [8,9] 	2000	0	1		#Keep Grill age 2, Year 3-4
+        [8,14] 	4300	0	1		#Sell Grill age 2, Year 3-4
+        [9,10] 	2900	0	1		#Keep Grill age 3, Year 4-5
+        [9,16] 	6900	0	1		#Sell Grill age 3, Year 4-5
+        [10,17] 0 		0	1		#End problem, Grill age 4
+        [11,12] 1250	0	1		#Keep Grill age 1, Year 3-4
+        [11,14] 3400	0	1		#Sell Grill age 1, Year 3-4
+        [12,13] 2000	0	1		#Keep Grill age 2, Year 4-5
+        [12,16] 4300	0	1		#Sell Grill age 2, Year 4-5
+        [13,17] 0		0	1		#End problem, Grill age 3
+        [14,15] 1250	0	1		#Keep Grill age 1, Year 4-5
+        [14,16] 3400	0	1		#Sell Grill age 1, Year 4-5
+        [15,17] 0		0	1		#End problem, Grill age 2
+        [16,17] 0		0	1		#End problem, Grill age 1
+;

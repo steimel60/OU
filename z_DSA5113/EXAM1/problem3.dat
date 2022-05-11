@@ -1,0 +1,50 @@
+set NODES :=  	s1 s2	 			#Supply nodes
+				r1 r2 r3 r4 		#Raw material nodes
+				m0 m1 m2 m3 m4 m5	#MudBGone inventory nodes
+				d1 d2 d3 d4			#Demand nodes
+; 
+set ARCS :=		(s1,s2),(s1,r1),(s1,r2),(s1,r3),(s1,r4),	#Chemical base supply arcs
+				(r1,m2),(r2,m3),(r3,m4),(r4,m5),			#Base to Product arcs
+				(m1,d1),(m1,m2),							#Inventory Period 1 arcs
+				(m2,d2),(m2,m3),							#Inventory Period 2 arcs
+				(m3,d3),(m3,m4),							#Inventory Period 3 arcs
+				(m4,d4),(m4,m5)								#Inventory Period 4 arcs
+;
+param b :=
+s1	100000		#Raw Chemical Supply
+s2	0			
+s3	0
+r1	0
+r2	0
+r3	0
+r4	0
+m1	2000		#Initial supply
+m2	0
+m3	0
+m4	0
+m5	-2000		#Final Inventory Req
+d1	0
+d2	0
+d3	0
+d4	0
+;
+
+param:        		c		l 		u 		m:=
+		[s1,s2] 	.		.		.		0		#Supply Surplus
+        [s1,r1]		2.5		.		7500	.		#Raw materials purchased p1
+        [s1,r2]		2.5		.		9000	.		#Raw materials purchased p2
+        [s1,r3]		3		.		8000	.		#Raw materials purchased p3
+        [s1,r4]		3.5		.		9200	.		#Raw materials purchased p4
+        [r1,m2]		11		.		.		.85		#Base to product p1
+        [r2,m3]		11		.		.		.85		#Base to product p2
+        [r3,m4]		11		.		.		.85		#Base to product p3
+        [r4,m5]		11		.		.		.85		#Base to product p4
+        [m1,m2]		1.3		.		3000	.92		#Inventory rollover p1
+        [m2,m3]		1.3		.		3000	.92		#Inventory rollover p2
+        [m3,m4]		1.3		.		3000	.92		#Inventory rollover p3
+        [m4,m5]		.		.		.		.		#Final remaining inventory
+        [m1,d1]		-38		2000	3000	0		#Delivered p1
+        [m2,d2]		-40		2500	3000	0		#Delivered p2
+        [m3,d3]		-42		2800	5000	0		#Delivered p3
+        [m4,d4]		-42		2500	5000	0		#Delivered p4
+        ;

@@ -1,0 +1,35 @@
+set NODES :=   s sd i1 i2 i3 i4 j1 j2 j3 j4 t; 
+set ARCS :=  (s,sd) (s,i1) (i1,i2) (i1,j1) (i2,i3) (i2,j2) (i3,i4) (i3,j3) (i4,j4) (j1,i2) (j1,i3) (j1,t) (j2,i3) (j2,i4) (j2,t) (j3,i4) (j3,t) (j4,t);
+
+param b :=
+s 100000		#Store has plenty of tires
+sd 0			#Supply Dummy
+i1 0			#Inventory Day 1
+i2 0			#Inventory Day 2
+i3 0			#Inventory Day 3
+i4 0			#Inventory Day 4
+j1 0			#Tires used Day 1
+j2 0			#Tires used Day 2
+j3 0			#Tires used Day 3
+j4 0			#Tires used Day 4
+t 0;			#Tires trashed dummy node
+
+param:        	c	l 	u 	m:=
+		[s,sd] 	.	.	.	0		#Supply surplus dummy
+        [s,i1] 	600	.	.	.		#Total tires to buy
+        [i1,i2]	.	.	.	.		#Unused tires from day 1 to 2
+        [i1,j1] .	320	.	.		#Used tires day 1
+        [i2,i3]	.	.	.	.		#Unused tires from day 2 to 3
+        [i2,j2] .	200	.	.		#Used tires day 2
+        [i3,i4]	.	.	.	.		#Unused tires day 3 to 4
+        [i3,j3] .	400	.	.		#Used tires day 3
+        [i4,j4] .	520	.	.		#Used tires day 4
+        [j1,i2]	250	.	.	.		#Quick service day 1 to 2
+        [j1,i3]	95	.	.	.		#Normal service day 1 to 3
+        [j1,t]	.	.	.	0		#Trashed tires day 1
+        [j2,i3]	250	.	.	.		#Quick service day 2 to 3
+        [j2,i4]	95	.	.	.		#Normal service day 2 to 4
+        [j2,t]	.	.	.	0		#Trashed tires day 2
+        [j3,i4]	250	.	.	.		#Quick service day 3 to 4
+        [j3,t]	.	.	.	0		#Trashed tires day 3
+        [j4,t]	.	.	.	0;		#Trashed tires day 4

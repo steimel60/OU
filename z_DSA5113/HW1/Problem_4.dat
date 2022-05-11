@@ -1,0 +1,21 @@
+data;
+
+set MEDIA := tv mag; #radio;
+
+param budget := 1;
+param peopleWeeks := 700;
+
+param cost :=
+tv		.02
+mag		.01;
+#radio	.002;
+
+param reach :=
+tv		1.8
+mag 	1;
+#radio	.25;
+
+param weeks :=
+tv		1
+mag		3;
+#radio	.1429;
