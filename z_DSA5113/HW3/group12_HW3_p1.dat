@@ -1,0 +1,11 @@
+set GENERATOR := G1 G2 G3;		#Generators in question
+set PERIOD := P1 P2;			#Periods of production
+
+param:		S		F		C		U:=
+	G1		3000	700		5		2100
+	G2		2000	800		4		1800
+	G3		1000	900		7		3000;
+	
+param:		min_prod:=
+	P1		2900
+	P2		3900;

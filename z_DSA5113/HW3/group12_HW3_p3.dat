@@ -1,0 +1,9 @@
+set SUPPLIERS := WII WRS WE WU WOW;
+
+param cap :=
+	WII	18000
+	WRS	14000
+	WE	7000
+	WU	22000
+	WOW	25000
+;

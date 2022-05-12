@@ -1,0 +1,29 @@
+set PRODUCT := A B C D E;				#Products in question
+set SILO := S1 S2 S3 S4 S5 S6 S7 S8;	#Available Silos
+
+param cost:	S1		S2		S3		S4		S5		S6		S7		S8:=
+	A		1		2		2		1		4		4		5		3
+	B		2		3		3		3		1		4		5		2
+	C		3		4		1		2		1		4		5		1
+	D		1		1		2		2		3		4		5		2
+	E		1		1		1		1		1		1		5		5	
+;
+	
+param		supply:=
+	A		75
+	B		20
+	C		25
+	D		80
+	E		20
+;
+
+param 	cap:=
+	S1	25
+	S2	25
+	S3	30
+	S4	60
+	S5	80
+	S6	85
+	S7	100
+	S8	50
+;
