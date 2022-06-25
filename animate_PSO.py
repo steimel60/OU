@@ -13,7 +13,7 @@ myPRNG = Random(seed)
 #to get a random number between lwrBnd and upprBnd, write call this:  myPRNG.uniform(lwrBnd,upprBnd)
 #to get a random integer between lwrBnd and upprBnd, write call this: myPRNG.randint(lwrBnd,upprBnd)
 
-#--------------------- PSO CLasses -----------------------#
+#--------------------- PSO CLasses ------------------------#
 """
 Adjust the Particle or Swarm class here.
 """
